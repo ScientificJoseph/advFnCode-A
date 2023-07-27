@@ -48,3 +48,5 @@ const calculateIncomeTaxAmount = createTaxCalculator(.25)
 console.log(calculateVatAmount(100)) // calls caculate tax and passes an argument. caculate tax has access to the variable tax due to scope
 console.log(calculateVatAmount(200))
 
+// Closures
+
