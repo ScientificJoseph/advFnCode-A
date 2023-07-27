@@ -32,7 +32,7 @@ const printHobbies = ((h) => { // Side effect caused by printHobbies adding an a
 // printHobbies(hobbies);
 
 
-const createTaxCalculator = ((tax) => { // receives tax rate from function call 
+const createTaxCalculator = ((tax) => { // Factory Function - Receives tax rate from function call 
     // console.log(tax)
     const calculateTax = ((amount) => { // inner function has access to outer functions parameters due to scope. Receives amount via call 
         return amount * tax;
