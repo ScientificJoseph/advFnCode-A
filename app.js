@@ -1,3 +1,4 @@
+// Pure Functions / Side Efx
 const add = ((num1, num2) => { // Pure function. Same inputs yield the same results.
     return num1 + num2;
 })
@@ -31,7 +32,7 @@ const printHobbies = ((h) => { // Side effect caused by printHobbies adding an a
 
 // printHobbies(hobbies);
 
-
+//Factory Functions
 const createTaxCalculator = ((tax) => { // Factory Function - Receives tax rate from function call 
     // console.log(tax)
     const calculateTax = ((amount) => { // inner function has access to outer functions parameters due to scope. Receives amount via call from calculateVatAmount
