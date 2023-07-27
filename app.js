@@ -38,10 +38,10 @@ const createTaxCalculator = ((tax) => { // Factory Function - Receives tax rate 
         return amount * tax;
     })
     // console.log(calculateTax)
-    return calculateTax; //returns pointer to fucntion
+    return calculateTax; //returns pointer to fucntion used by calculateVatAmount
 })
 
-const calculateVatAmount = createTaxCalculator(.19) // passes .19 to createTaxCalculator, wich reutrns the function calculateTax which is stored in calculateVatAmount
+const calculateVatAmount = createTaxCalculator(.19) // passes .19 to createTaxCalculator, wich reutrns a pointer to the function calculateTax which is stored in calculateVatAmount
 const calculateIncomeTaxAmount = createTaxCalculator(.25)
 
 console.log(calculateVatAmount(100)) // calls caculate tax and passes an argument. caculate tax has access to the variable tax due to scope
