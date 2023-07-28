@@ -33,10 +33,14 @@ const printHobbies = ((h) => { // Side effect caused by printHobbies adding an a
 // printHobbies(hobbies);
 
 //Factory Functions
+
+let multiplier = 1.1;
+
 const createTaxCalculator = ((tax) => { // Factory Function - Receives tax rate from function call 
     // console.log(tax)
     const calculateTax = ((amount) => { // inner function has access to outer functions parameters due to scope. Receives amount via call from calculateVatAmount
-        return amount * tax;
+        console.log(multiplier)
+        return amount * tax * multiplier;
     })
     // console.log(calculateTax)
     return calculateTax; //returns pointer to fucntion used by calculateVatAmount
@@ -45,8 +49,23 @@ const createTaxCalculator = ((tax) => { // Factory Function - Receives tax rate 
 const calculateVatAmount = createTaxCalculator(.19) // passes .19 to createTaxCalculator, wich reutrns a pointer to the function calculateTax which is stored in calculateVatAmount
 const calculateIncomeTaxAmount = createTaxCalculator(.25)
 
+multiplier = 1.2;
+
 console.log(calculateVatAmount(100)) // calls caculate tax and passes an argument. caculate tax has access to the variable tax due to scope
 console.log(calculateVatAmount(200))
 
 // Closures
 
+let userName = 'Virginia';
+
+const greetUser = (() => { // function uses the latest value of the variable
+    // let name = userName;
+    // let name = 'Anna'
+    console.log('Hi ' + name)
+})
+
+let name = 'Bonnie'
+
+userName = 'YardGurl'
+
+greetUser()
