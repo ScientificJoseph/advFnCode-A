@@ -70,4 +70,11 @@ userName = 'YardGurl'
 
 greetUser()
 
+// Recursion 
 
+const powerOf = ((x, n) => {
+    mult = x * n;
+    return `${x} to the ${n}rd power = ${mult}.`
+})
+
+console.log(powerOf(2,3))
