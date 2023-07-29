@@ -101,7 +101,16 @@ const myself = {
             name: 'Kiesha',
             friends: [
                 {
-                    name: 'Taz'
+                    name: 'Taz',
+                    friends: [
+                        {
+                            name: 'Carl'
+                        },
+                        {
+                            name: 'Macy'
+                        }
+                    ]
+                    
                 }
             ]
         },
@@ -112,14 +121,19 @@ const myself = {
 
 }
 
-const printFriendNames = ((person) => {
+const getFriendNames = ((person) => {
     const collectedNames = [];
+
+    if(!person.friends) {
+        return [];
+    }
 
     for (const friend of person.friends){
         collectedNames.push(friend.name)
+        collectedNames.push(...getFriendNames(friend))
     }
 
     return collectedNames;
 })
 
-console.log(printFriendNames(myself))
+console.log(getFriendNames(myself))
