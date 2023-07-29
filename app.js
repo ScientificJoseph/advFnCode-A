@@ -58,9 +58,9 @@ console.log(calculateVatAmount(200))
 
 let userName = 'Virginia';
 
-const greetUser = (() => { // function uses the latest value of the variable
+const greetUser = (() => { // function uses the latest value of the variable.
     // let name = userName;
-    // let name = 'Anna'
+    // let name = 'Anna' // local variable is used. 
     console.log('Hi ' + name)
 })
 
@@ -69,3 +69,5 @@ let name = 'Bonnie'
 userName = 'YardGurl'
 
 greetUser()
+
+
