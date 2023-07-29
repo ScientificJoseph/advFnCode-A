@@ -96,5 +96,30 @@ console.log(powerOf(2,3)); //2 * 2 * 2 = 8
 
 const myself = {
     name: 'Joseph',
-    
+    friends: [
+        {
+            name: 'Kiesha',
+            friends: [
+                {
+                    name: 'Taz'
+                }
+            ]
+        },
+        {
+            name: 'Jill'
+        }
+    ]
+
 }
+
+const printFriendNames = ((person) => {
+    const collectedNames = [];
+
+    for (const friend of person.friends){
+        collectedNames.push(friend.name)
+    }
+
+    return collectedNames;
+})
+
+console.log(printFriendNames(myself))
