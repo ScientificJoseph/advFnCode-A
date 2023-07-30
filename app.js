@@ -82,17 +82,24 @@ greetUser()
 //     return result
 // })
 
-const powerOf = ((x, n) => { // 
+const powerOf = ((x, n) => { //Excellent resource to explane the recursive execution of the code below: https://javascript.info/recursion 
 
     // if (n === 1) { 
     //     return x;
     // }
     // return x * powerOf(x, n - 1); 
 
-    return n === 1 ? x : x * powerOf(x, n-1)
+    // When the condition n === 1 is met, the call tack operates to clear functions from the stack, with the most recent call at the top and return x. 
+
+    //Order of executuion onece n === 1
+    //2 = 2 
+    //2 * 2 * 1 = 4 
+    //2 * 2 * 2 = 8 
+
+    return n === 1 ? x : x * powerOf(x, n-1) // Minimized code with terinary expression.
 })
 
-console.log(powerOf(2,3)); //2 * 2 * 2 = 8
+console.log(powerOf(2,3));//2 * 2 * 2 = 8. Initial call is paused and placed at the bottom of the call stack until the condition n === 1 is truthy. The values for x and n are preserved in memory.
 
 const myself = {
     name: 'Joseph',
